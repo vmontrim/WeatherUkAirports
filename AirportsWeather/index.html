@@ -1,0 +1,79 @@
+<!doctype html>
+
+<html lang="en">
+
+	<head>
+
+		<meta charset="utf-8">
+
+		<title>Airport Weather Info</title>
+		<meta name="description" content="Airport Weather Info">
+		<meta name="author" content="Vito Montrim">
+		<meta name="viewport" content="width=device-width, initial-scale-1">
+
+		<link href="./libs/css/style.css" rel="stylesheet">
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+
+	</head>
+
+	<body>
+		<div id='container'>
+		<h3>Airport Weather Info</h3>
+		<form id='main'>
+			 
+			<h6>Edinburgh Airport:</h6> 
+			<select class='northSel'>
+				 <option value='temperature'>temperature</option>
+				 <option value='humidity'>humidity</option>
+				 <option value='windspeed'>windspeed</option>
+				 </select>
+				 
+			<br>
+			
+				<h6> Heathrow Airport:</h6>
+			<select class='southSel'>
+				<option value='temperature'>temperature</option>
+				<option value='humidity'>humidity</option>
+				<option value='windspeed'>windspeed</option>
+				</select>
+				
+				<br>
+			
+			<h6>East Midlands Airport:</h6>
+			<select class='eastSel'>
+				 <option value='temperature'>temperature</option>
+				 <option value='humidity'>humidity</option>
+				 <option value='windspeed'>windspeed</option>
+				 </select>
+
+			
+		   <br>
+		   	
+			 <h6>Birmingham Airport:</h6>
+			  <select class='westSel'>
+				<option value='temperature'>temperature</option>
+				<option value='humidity'>humidity</option>
+				<option value='windspeed'>windspeed</option>
+				</select>
+				<button class="btnRun">submit</button>
+			
+			</from>
+		</div>
+		
+		<div id='results'>
+			<h2>Results:</h2>
+			North: <span id="resultNorth"></span><br />
+			South: <span id="resultSouth"></span><br />
+			East: <span id="resultWest"></span><br />
+			West: <span id="resultEast"></span><br />
+		</div>
+		
+
+
+		<script type="application/javascript" src="libs/js/jquery-2.2.3.min.js"></script>
+		<script type="application/javascript" src="libs/js/script.js"></script>
+
+	</body>
+
+</html>
