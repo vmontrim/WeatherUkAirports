@@ -23,9 +23,16 @@ error_reporting(0);
 
 	foreach($airports as $which => $airportCode){
 		$url = $urlBase . $airportCode;
-		$contents = file_get_contents($url);
+		$ch = curl_init();
+		curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
+		curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+		curl_setopt($ch, CURLOPT_URL,$url);
+
+		$result=curl_exec($ch);
+
+		curl_close($ch);
 		
-		$decoded = json_decode($contents, true);
+		$decoded = json_decode($result, true);
 		
 		//possible options:
 		//tempeture
@@ -46,18 +53,7 @@ error_reporting(0);
 	}
 	echo json_encode($dataToReturn); 
 
-//East lng + x West lng -x North lat+y Sout lat-y 
-//bottom left corner
-//lat: 51.323407
-//lng: -0.526449
 
-//lat:51.681651
-//lng:0.177870
-
-//luton (north): EGGW
-//gatwick(south): EGKK
-//heathrow (west): EGLL
-//london city airport (east): EGLC
 
 
 
